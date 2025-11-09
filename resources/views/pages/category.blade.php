@@ -21,7 +21,7 @@
                             <p class="text-muted small mb-2">
                                 {{ $article->created_at->format('d M Y') }} | by: {{ $article->writer->name }}
                             </p>
-                            <p class="text-muted">{{ Str::limit($article->body, 100) }}</p>
+                            <p class="text-muted">{{ Str::limit($article->content, 100) }}</p>
                             <a href="{{ route('article.show', $article->id) }}" class="read-more-dark text-white text-decoration-none">
                                 read more...
                             </a>

@@ -19,20 +19,6 @@ return new class extends Migration
 
         DB::table('writers')->insert([
             [
-                'name' => 'Betty Geraldo',
-                'expertise' => 'Spesialis Data Science',
-                'image' => 'https://i.pravatar.cc/150?img=1',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'name' => 'Kolin Kolin',
-                'expertise' => 'Spesialis Network Security',
-                'image' => 'https://i.pravatar.cc/150?img=5',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
                 'name' => 'Marvel Collin',
                 'expertise' => 'Spesialis Interactive Multimedia',
                 'image' => 'https://i.pravatar.cc/150?img=12',

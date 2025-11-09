@@ -11,8 +11,6 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Data Science'],
-            ['name' => 'Network Security'],
             ['name' => 'Interactive Multimedia'],
             ['name' => 'Software Engineering']
         ];

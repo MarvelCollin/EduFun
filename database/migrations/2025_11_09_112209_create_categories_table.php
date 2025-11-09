@@ -16,8 +16,6 @@ return new class extends Migration
         });
 
         DB::table('categories')->insert([
-            ['name' => 'Data Science', 'created_at' => now(), 'updated_at' => now()],
-            ['name' => 'Network Security', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Interactive Multimedia', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Software Engineering', 'created_at' => now(), 'updated_at' => now()],
         ]);

@@ -15,16 +15,6 @@ class WriterSeeder extends Seeder
 
         $writers = [
             [
-                'name' => 'Raka Putra Wicaksono',
-                'expertise' => 'Spesialis Data Science',
-                'image' => 'https://i.pravatar.cc/150?img=1'
-            ],
-            [
-                'name' => 'Sita Wahyuni',
-                'expertise' => 'Spesialis Network Security',
-                'image' => 'https://i.pravatar.cc/150?img=5'
-            ],
-            [
                 'name' => 'Andi Setiawan',
                 'expertise' => 'Spesialis Interactive Multimedia',
                 'image' => 'https://i.pravatar.cc/150?img=12'

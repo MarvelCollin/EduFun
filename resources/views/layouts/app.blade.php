@@ -158,10 +158,8 @@
                             Category
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Data Science</a></li>
-                            <li><a class="dropdown-item" href="#">Network Security</a></li>
-                            <li><a class="dropdown-item" href="#">Interactive Multimedia</a></li>
-                            <li><a class="dropdown-item" href="#">Software Engineering</a></li>
+                            <li><a class="dropdown-item" href="{{ route('category.show', 1) }}">Interactive Multimedia</a></li>
+                            <li><a class="dropdown-item" href="{{ route('category.show', 2) }}">Software Engineering</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

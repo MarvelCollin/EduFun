@@ -17,6 +17,6 @@ class HomeController extends Controller
 
         $categories = Category::all();
 
-        return view('home', compact('latestArticles', 'categories'));
+        return view('pages.home', compact('latestArticles', 'categories'));
     }
 }

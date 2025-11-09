@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduFun - @yield('title')</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
@@ -25,69 +20,29 @@
             z-index: 100;
         }
         
-        .navbar-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
         .navbar-brand {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #2c3e50;
-            text-decoration: none;
+            color: #2c3e50 !important;
         }
         
-        .navbar-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .navbar-menu a {
-            text-decoration: none;
+        .navbar-nav .nav-link {
             color: #2c3e50;
             font-weight: 500;
-            transition: color 0.3s;
+            padding: 0.5rem 1rem;
         }
         
-        .navbar-menu a:hover {
+        .navbar-nav .nav-link:hover {
             color: #3498db;
         }
         
-        .dropdown {
-            position: relative;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: white;
-            min-width: 200px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        .dropdown-menu {
             border-radius: 4px;
-            margin-top: 0.5rem;
-            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: none;
         }
         
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        
-        .dropdown-content a {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: #2c3e50;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        
-        .dropdown-content a:hover {
+        .dropdown-item:hover {
             background-color: #f8f9fa;
         }
         
@@ -103,32 +58,13 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .section-title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-        }
-        
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
         .article-card {
             background: white;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
         }
         
         .article-card:hover {
@@ -140,29 +76,6 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-        }
-        
-        .article-content {
-            padding: 1.5rem;
-        }
-        
-        .article-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-        
-        .article-meta {
-            color: #7f8c8d;
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-        
-        .article-excerpt {
-            color: #34495e;
-            margin-bottom: 1rem;
-            line-height: 1.6;
         }
         
         .read-more {
@@ -177,6 +90,17 @@
         
         .read-more:hover {
             background-color: #2980b9;
+            color: white;
+        }
+        
+        .read-more-dark {
+            background-color: #1e3a5f;
+            border-radius: 20px;
+            padding: 0.5rem 1.5rem;
+        }
+        
+        .read-more-dark:hover {
+            background-color: #2c3e50;
         }
         
         .footer {
@@ -186,34 +110,80 @@
             padding: 2rem;
             margin-top: 3rem;
         }
+        
+        .writer-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background-color: white;
+        }
+        
+        .writer-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .writer-card {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .writer-card:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-content">
-            <a href="{{ route('home') }}" class="navbar-brand">EduFun</a>
-            <ul class="navbar-menu">
-                <li><a href="{{ route('home') }}">Home</a></li>
-                <li class="dropdown">
-                    <a href="#">Category</a>
-                    <div class="dropdown-content">
-                        <a href="#">Data Science</a>
-                        <a href="#">Network Security</a>
-                        <a href="#">Interactive Multimedia</a>
-                        <a href="#">Software Engineering</a>
-                    </div>
-                </li>
-                <li><a href="{{ route('writers.index') }}">Writers</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Popular</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ route('home') }}">EduFun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Data Science</a></li>
+                            <li><a class="dropdown-item" href="#">Network Security</a></li>
+                            <li><a class="dropdown-item" href="#">Interactive Multimedia</a></li>
+                            <li><a class="dropdown-item" href="#">Software Engineering</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('writers.index') }}">Writers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('about') }}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('popular') }}">Popular</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     @yield('content')
 
     <footer class="footer">
-        <p>&copy; EduFun 2025 | Web Programming | Marvel Collin | 2702280352</p>
+        <p class="mb-0">&copy; EduFun 2025 | Web Programming | Marvel Collin | 2702280352</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduFun - @yield('title')</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         * {
             margin: 0;
@@ -204,7 +203,7 @@
                         <a href="#">Software Engineering</a>
                     </div>
                 </li>
-                <li><a href="#">Writers</a></li>
+                <li><a href="{{ route('writers.index') }}">Writers</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Popular</a></li>
             </ul>
@@ -214,7 +213,7 @@
     @yield('content')
 
     <footer class="footer">
-        <p>&copy; EduFun 2024 | Web Programming | Your Name | Your NIM</p>
+        <p>&copy; EduFun 2025 | Web Programming | Marvel Collin | 2702280352</p>
     </footer>
 </body>
 </html>

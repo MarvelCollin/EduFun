@@ -23,7 +23,7 @@
                     <p class="mb-3" style="color: #34495e;">
                         {{ Str::limit($article->content, 150) }}
                     </p>
-                    <a href="#" class="read-more">read more...</a>
+                    <a href="{{ route('article.show', $article->id) }}" class="read-more">read more...</a>
                 </div>
             </div>
         </div>

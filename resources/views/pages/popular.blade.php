@@ -24,7 +24,7 @@
                         </p>
                     </div>
                     <div>
-                        <a href="#" class="read-more read-more-dark">read more...</a>
+                        <a href="{{ route('article.show', $article->id) }}" class="read-more read-more-dark">read more...</a>
                     </div>
                 </div>
             </div>
